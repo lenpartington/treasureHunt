@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class ResultFileWriter {
-	private String fileName = "carte.txt";
+	private String fileName;
 
 	public void writeFile(List<String> lines) {
 		ClassLoader classLoader = getClass().getClassLoader();

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileReader {
-	private String fileName = "carte.txt";
+	private String fileName;
 
 	public List<String> readFile() {
 		URI uri = null;
