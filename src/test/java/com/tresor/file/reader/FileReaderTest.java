@@ -9,9 +9,6 @@ import org.junit.Test;
 public class FileReaderTest {
 	
 
-	
-	
-	
 	@Test
 	public void readFile() {
 		FileReader reader = new FileReader("carte_vide.txt");
