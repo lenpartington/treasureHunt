@@ -1,0 +1,35 @@
+package com.tresor.file.reader;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileReader {
+	private String fileName = "carte.txt";
+
+	public List<String> readFile() {
+		URI uri = null;
+		List<String> lines = new ArrayList<String>();
+		try {
+			uri = ClassLoader.getSystemResource(fileName).toURI();
+			lines = Files.readAllLines(Paths.get(uri));
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+
+		return lines;
+	}
+
+	public FileReader(String fileName) {
+		super();
+		this.fileName = fileName;
+	}
+	
+	
+}
