@@ -58,6 +58,22 @@ public class Orientation {
 		Orientation other = (Orientation) obj;
 		return posX == other.posX && posY == other.posY;
 	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
 	
 	
 }

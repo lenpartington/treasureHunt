@@ -5,7 +5,9 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-public class CarteCreationTest {
+import com.tresor.carte.cellule.Cellule;
+
+public class CarteTest {
 
 	
 	
@@ -21,7 +23,6 @@ public class CarteCreationTest {
 	
 	
 	
-	
 	@Test
 	public void creationCarteWithString() {
 		
@@ -31,5 +32,17 @@ public class CarteCreationTest {
 		assertNotNull(carte);
 		assertEquals(6, carte.getCells().size());
 		
+	}
+	
+	@Test
+	public void getCell() {
+		String cLine = "C - 3 - 2";
+		Carte carte = new Carte(cLine);
+		
+		assertNotNull(carte);
+		assertEquals(6, carte.getCells().size());
+		Cellule result = carte.getCell(1, 1);
+		Cellule expected = new Cellule(1 , 1);
+		assertEquals(expected, result);
 	}
 }

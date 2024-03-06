@@ -74,6 +74,98 @@ public class Aventurier {
 
 
 
+	public String getNom() {
+		return nom;
+	}
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
+	public int getPosX() {
+		return posX;
+	}
+
+
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+
+
+	public int getPosY() {
+		return posY;
+	}
+
+
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+
+
+
+	public int getNombreTresors() {
+		return nombreTresors;
+	}
+
+
+
+	public void setNombreTresors(int nombreTresors) {
+		this.nombreTresors = nombreTresors;
+	}
+
+
+
+	public String getOrientation() {
+		return orientation;
+	}
+
+
+
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
+	}
+
+
+
+	public Cellule getTarget() {
+		return target;
+	}
+
+
+
+	public void setTarget(Cellule target) {
+		this.target = target;
+	}
+
+
+
+	public String getMouvement() {
+		return mouvement;
+	}
+
+
+
+	public void setMouvement(String mouvement) {
+		this.mouvement = mouvement;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Aventurier [nom=" + nom + ", posX=" + posX + ", posY=" + posY + ", nombreTresors=" + nombreTresors
+				+ ", orientation=" + orientation + ", target=" + target + ", mouvement=" + mouvement + "]";
+	}
+
+
+
 
 
 

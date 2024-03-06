@@ -2,12 +2,13 @@ package com.tresor.carte;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.tresor.carte.cellule.Cellule;
 
 public class Carte {
 
-	private List<Cellule> cells ;
+	private List<Cellule> cells;
 
 	public Carte(String line) {
 		super();
@@ -34,7 +35,6 @@ public class Carte {
 		}
 	}
 
-	
 	public List<Cellule> getCells() {
 		return cells;
 	}
@@ -42,8 +42,16 @@ public class Carte {
 	public void setCells(List<Cellule> cells) {
 		this.cells = cells;
 	}
-	
-	
 
-	
+	public Cellule getCell(int posX, int posY) {
+System.out.println("getCell("+posX+","+posY+")");
+		Optional<Cellule> cellule = cells.stream()
+				.filter(c -> c.getPosX() == posX)
+				.filter(c -> c.getPosY() == posY)
+				.findFirst();
+				
+
+		return cellule.orElse(null);
+	}
+
 }
