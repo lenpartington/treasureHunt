@@ -44,7 +44,7 @@ public class Carte {
 	}
 
 	public Cellule getCell(int posX, int posY) {
-System.out.println("getCell("+posX+","+posY+")");
+		System.out.println("getCell("+posX+","+posY+")");
 		Optional<Cellule> cellule = cells.stream()
 				.filter(c -> c.getPosX() == posX)
 				.filter(c -> c.getPosY() == posY)
@@ -52,6 +52,19 @@ System.out.println("getCell("+posX+","+posY+")");
 				
 
 		return cellule.orElse(null);
+	}
+
+	public void setMontagne(int x, int y) {
+		Cellule montagne = getCell(x,y);
+		montagne.setType("M");
+		
+	}
+
+	public void setMontagne(String montagne) {
+		String[] splitted = montagne.split(" - ");
+		int x = Integer.valueOf(splitted[1]);
+		int y = Integer.valueOf(splitted[2]);
+		setMontagne( x,y);
 	}
 
 }

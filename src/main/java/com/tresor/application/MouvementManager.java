@@ -18,7 +18,9 @@ public class MouvementManager {
 		Cellule target = carte.getCell(posX, posY);
 		System.out.println(target);
 		System.out.println(aventurier);
-		if(target!=null) {
+		
+		
+		if(target!=null&&target.getType()!="M") {
 			aventurier.setPosX(target.getPosX());
 			aventurier.setPosY(target.getPosY());
 		}
