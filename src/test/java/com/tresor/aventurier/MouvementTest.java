@@ -7,6 +7,7 @@ import org.junit.Test;
 import com.tresor.application.MouvementManager;
 import com.tresor.carte.Carte;
 import com.tresor.carte.cellule.Cellule;
+import com.tresor.carte.cellule.CelluleTresor;
 
 public class MouvementTest {
 
@@ -70,5 +71,24 @@ public class MouvementTest {
 		
 	}
 	
+	@Test
+	public void test_aventurier_tresor() {
+		Carte carte = new Carte("C - 3 - 3");
+		
+		for (Cellule c : carte.getCells()) {
+			System.out.println("cell x:"+c.getPosX()+", y:"+c.getPosY());
+		}
+		assertEquals(9,carte.getCells().size());
+		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
+		assertEquals("A", lara.getMouvement());
+		carte.setTresor("T - 1 - 2 - 2");		
+		
+		MouvementManager.processMouvementA(carte, lara);
+		assertEquals(1,lara.posX);
+		assertEquals(2,lara.posY);
+		assertEquals(1,carte.getCell(1, 2).getNombreTresor());
+		assertEquals(1,lara.getNombreTresor());
+		
+	}
 	
 }

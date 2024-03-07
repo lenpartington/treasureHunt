@@ -110,7 +110,7 @@ public class Aventurier {
 
 
 
-	public int getNombreTresors() {
+	public int getNombreTresor() {
 		return nombreTresors;
 	}
 
