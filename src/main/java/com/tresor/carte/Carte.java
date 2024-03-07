@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.tresor.carte.cellule.Cellule;
+import com.tresor.carte.cellule.CelluleTresor;
 
 public class Carte {
 
@@ -65,6 +66,20 @@ public class Carte {
 		int x = Integer.valueOf(splitted[1]);
 		int y = Integer.valueOf(splitted[2]);
 		setMontagne( x,y);
+	}
+
+	public void setTresor(String tresor) {
+		CelluleTresor ct = new CelluleTresor(tresor); 
+		setCell(ct);
+		
+	}
+
+	private void setCell(Cellule cellule) {
+		Cellule toReplace = getCell(cellule.getPosX(), cellule.getPosY());
+		int index = this.cells.indexOf(toReplace);
+		this.cells.set(index,cellule);
+		
+		
 	}
 
 }

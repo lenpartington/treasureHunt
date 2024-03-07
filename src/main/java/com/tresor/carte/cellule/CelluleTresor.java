@@ -2,7 +2,7 @@ package com.tresor.carte.cellule;
 
 public class CelluleTresor extends Cellule {
 
-	private int nombreTresor;
+	
 
 	public CelluleTresor(int x, int y) {
 		super(x, y);
@@ -18,12 +18,6 @@ public class CelluleTresor extends Cellule {
 		this.setType("T");
 	}
 
-	public int getNombreTresor() {
-		return nombreTresor;
-	}
-
-	public void setNombreTresor(int nombreTresor) {
-		this.nombreTresor = nombreTresor;
-	}
+	
 
 }

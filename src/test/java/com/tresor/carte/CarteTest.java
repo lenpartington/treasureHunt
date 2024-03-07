@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 import com.tresor.carte.cellule.Cellule;
+import com.tresor.carte.cellule.CelluleTresor;
 
 public class CarteTest {
 
@@ -81,4 +82,24 @@ public class CarteTest {
 		
 		
 	}
+	
+	@Test
+	public void carte_with_tresor() {
+		Carte carte = new Carte("C - 3 - 2");
+		
+		for (Cellule c : carte.getCells()) {
+			System.out.println("cell x:"+c.getPosX()+", y:"+c.getPosY());
+		}
+		
+		assertEquals(6,carte.getCells().size());
+		String tresor = "T - 1 - 0 - 2";
+		carte.setTresor(tresor);
+		CelluleTresor expected = new CelluleTresor(1, 0);
+		expected.setNombreTresor(2);
+		assertEquals(expected, carte.getCell(1, 0));
+		assertEquals(2, carte.getCell(1, 0).getNombreTresor());
+		
+		
+	}
+	
 }
