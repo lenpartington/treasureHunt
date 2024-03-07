@@ -13,6 +13,10 @@ public class Cellule {
 		this.posY = y;
 	}
 
+	protected Cellule() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getPosX() {
 		return posX;
 	}
