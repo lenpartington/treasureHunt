@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.DataWriter;
-import com.tresor.application.domain.Domain;
 import com.tresor.application.manager.carte.MapManager;
 import com.tresor.application.manager.domain.DomainObjectManager;
 import com.tresor.application.manager.input.InputManager;
@@ -54,6 +53,26 @@ public class ApplicationManager {
 
 	public void setMapManager(MapManager mapManager) {
 		this.mapManager = mapManager;
+	}
+
+
+	public TurnManager getTurnManager() {
+		return turnManager;
+	}
+
+
+	public void setTurnManager(TurnManager turnManager) {
+		this.turnManager = turnManager;
+	}
+
+
+	public InputManager getInputManager() {
+		return inputManager;
+	}
+
+
+	public void setInputManager(InputManager inputManager) {
+		this.inputManager = inputManager;
 	}
 	
 	

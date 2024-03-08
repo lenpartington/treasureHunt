@@ -2,6 +2,7 @@ package com.tresor.application;
 
 import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.file.FileReader;
+import com.tresor.application.manager.ApplicationManager;
 import com.tresor.application.manager.carte.ClassicMapManagerImpl;
 import com.tresor.application.manager.carte.MapManager;
 import com.tresor.application.manager.input.FromAventurierInputManagerImpl;
@@ -22,6 +23,11 @@ public class Main {
 		
 		InputManager inputManager = new FromAventurierInputManagerImpl();
 		
+		ApplicationManager app = new ApplicationManager();
+		app.setDataReader(dataReader);
+		app.setMapManager(mapManager);
+		app.setTurnManager(turnManager);
+		app.setInputManager(inputManager);
 		
 	}
 
