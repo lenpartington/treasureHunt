@@ -1,9 +1,9 @@
-package com.tresor.application;
+package com.tresor.application.manager;
 
-import com.tresor.aventurier.Aventurier;
-import com.tresor.aventurier.Orientation;
-import com.tresor.carte.Carte;
-import com.tresor.carte.cellule.Cellule;
+import com.tresor.application.domain.aventurier.Aventurier;
+import com.tresor.application.domain.aventurier.Orientation;
+import com.tresor.application.domain.carte.Carte;
+import com.tresor.application.domain.carte.cellule.Cellule;
 
 public class MouvementManager {
 
@@ -23,6 +23,10 @@ public class MouvementManager {
 		if(target!=null&&target.getType()!="M") {
 			aventurier.setPosX(target.getPosX());
 			aventurier.setPosY(target.getPosY());
+			if(target.getType()=="T"&&target.getNombreTresor()>0) {
+				target.setNombreTresor(target.getNombreTresor()-1);
+				aventurier.setNombreTresors(aventurier.getNombreTresor()+1);
+			}
 		}
 		
 		

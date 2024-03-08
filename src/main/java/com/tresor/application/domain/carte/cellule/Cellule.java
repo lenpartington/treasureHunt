@@ -1,4 +1,4 @@
-package com.tresor.carte.cellule;
+package com.tresor.application.domain.carte.cellule;
 
 import java.util.Objects;
 
@@ -6,11 +6,15 @@ public class Cellule {
 
 	private int posX;
 	private int posY;
-	private String type = "";
-
+	private String type ="P"; //Plaine
+	private int nombreTresor=0;
 	public Cellule(int x, int y) {
 		this.posX = x;
 		this.posY = y;
+	}
+
+	protected Cellule() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getPosX() {
@@ -40,12 +44,19 @@ public class Cellule {
 	public String getType() {
 		return type;
 	}
+	public int getNombreTresor() {
+		return nombreTresor;
+	}
+
+	public void setNombreTresor(int nombreTresor) {
+		this.nombreTresor = nombreTresor;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(posX, posY);
+		return Objects.hash(posX, posY, type);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -55,12 +66,15 @@ public class Cellule {
 		if (getClass() != obj.getClass())
 			return false;
 		Cellule other = (Cellule) obj;
-		return posX == other.posX && posY == other.posY;
+		return posX == other.posX && posY == other.posY && Objects.equals(type, other.type);
 	}
 
 	@Override
 	public String toString() {
-		return "Cellule [posX=" + posX + ", posY=" + posY + "]";
+		return getType()+" - "+getPosX()+" - "+getPosY();
 	}
+
+
+
 
 }

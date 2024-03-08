@@ -1,4 +1,4 @@
-package com.tresor.file.reader;
+package com.tresor.application.dataLayer.file;
 
 import java.io.IOException;
 import java.net.URI;
@@ -7,9 +7,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import com.tresor.application.dataLayer.DataReader;
 
-public class FileReader {
-	private String fileName;
+public class FileReader implements DataReader {
+	private String fileName = "carte.txt";
 
 	public List<String> readFile() {
 		URI uri = null;
@@ -30,6 +31,7 @@ public class FileReader {
 		super();
 		this.fileName = fileName;
 	}
+
 	
 	
 }

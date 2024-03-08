@@ -20,7 +20,7 @@ public class ResultFileWriterTest {
 		reader = new FileReader(fileNameResult);
 		List<String> lines = reader.readFile();
 		assertEquals("#commentaire", lines.get(0));
-		assertEquals("C - 3 - 4", lines.get(1));
+		assertEquals("C - 3 - 4", lines.get(1)); 
 
 	}
 }
