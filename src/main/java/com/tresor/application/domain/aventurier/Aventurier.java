@@ -1,8 +1,8 @@
-package com.tresor.aventurier;
+package com.tresor.application.domain.aventurier;
 
 import java.util.Objects;
 
-import com.tresor.carte.cellule.Cellule;
+import com.tresor.application.domain.carte.Cellule;
 
 public class Aventurier {
 

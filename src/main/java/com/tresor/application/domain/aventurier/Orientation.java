@@ -1,4 +1,4 @@
-package com.tresor.aventurier;
+package com.tresor.application.domain.aventurier;
 
 import java.util.Objects;
 

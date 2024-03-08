@@ -1,9 +1,9 @@
-package com.tresor.application;
+package com.tresor.application.manager;
 
-import com.tresor.aventurier.Aventurier;
-import com.tresor.aventurier.Orientation;
-import com.tresor.carte.Carte;
-import com.tresor.carte.cellule.Cellule;
+import com.tresor.application.domain.aventurier.Aventurier;
+import com.tresor.application.domain.aventurier.Orientation;
+import com.tresor.application.domain.carte.Carte;
+import com.tresor.application.domain.carte.Cellule;
 
 public class MouvementManager {
 

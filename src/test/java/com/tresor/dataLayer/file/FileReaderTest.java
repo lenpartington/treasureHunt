@@ -1,10 +1,12 @@
-package com.tresor.file.reader;
+package com.tresor.dataLayer.file;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.Test;
+
+import com.tresor.application.dataLayer.file.FileReader;
 
 public class FileReaderTest {
 	

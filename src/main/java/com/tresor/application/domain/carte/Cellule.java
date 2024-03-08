@@ -1,4 +1,4 @@
-package com.tresor.carte.cellule;
+package com.tresor.application.domain.carte;
 
 import java.util.Objects;
 

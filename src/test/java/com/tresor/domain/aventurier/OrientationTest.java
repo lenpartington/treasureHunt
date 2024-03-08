@@ -1,8 +1,10 @@
-package com.tresor.aventurier;
+package com.tresor.domain.aventurier;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.tresor.domain.aventurier.Orientation;
 
 public class OrientationTest {
 

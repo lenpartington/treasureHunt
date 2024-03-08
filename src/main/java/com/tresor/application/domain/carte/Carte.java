@@ -1,11 +1,8 @@
-package com.tresor.carte;
+package com.tresor.application.domain.carte;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import com.tresor.carte.cellule.Cellule;
-import com.tresor.carte.cellule.CelluleTresor;
 
 public class Carte {
 

@@ -1,13 +1,13 @@
-package com.tresor.aventurier;
+package com.tresor.application;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.tresor.application.MouvementManager;
-import com.tresor.carte.Carte;
-import com.tresor.carte.cellule.Cellule;
-import com.tresor.carte.cellule.CelluleTresor;
+import com.tresor.application.manager.MouvementManager;
+import com.tresor.domain.aventurier.Aventurier;
+import com.tresor.domain.carte.Carte;
+import com.tresor.domain.carte.Cellule;
 
 public class MouvementTest {
 
@@ -26,8 +26,8 @@ public class MouvementTest {
 		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
 		assertEquals("A", lara.getMouvement());
 		MouvementManager.processMouvementA(carte, lara);
-		assertEquals(1,lara.posX);
-		assertEquals(2,lara.posY);
+		assertEquals(1,lara.getPosX());
+		assertEquals(2,lara.getPosY());
 		
 		
 	}
@@ -44,8 +44,8 @@ public class MouvementTest {
 		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
 		assertEquals("A", lara.getMouvement());
 		MouvementManager.processMouvementA(carte, lara);
-		assertEquals(1,lara.posX);
-		assertEquals(1,lara.posY);
+		assertEquals(1,lara.getPosX());
+		assertEquals(1,lara.getPosY());
 		
 		
 	}
@@ -65,8 +65,8 @@ public class MouvementTest {
 		
 		
 		MouvementManager.processMouvementA(carte, lara);
-		assertEquals(1,lara.posX);
-		assertEquals(1,lara.posY);
+		assertEquals(1,lara.getPosX());
+		assertEquals(1,lara.getPosY());
 		
 		
 	}
@@ -84,8 +84,8 @@ public class MouvementTest {
 		carte.setTresor("T - 1 - 2 - 2");		
 		
 		MouvementManager.processMouvementA(carte, lara);
-		assertEquals(1,lara.posX);
-		assertEquals(2,lara.posY);
+		assertEquals(1,lara.getPosX());
+		assertEquals(2,lara.getPosY());
 		assertEquals(1,carte.getCell(1, 2).getNombreTresor());
 		assertEquals(1,lara.getNombreTresor());
 		

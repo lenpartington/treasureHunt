@@ -1,12 +1,13 @@
-package com.tresor.carte;
+package com.tresor.domain.carte;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import com.tresor.carte.cellule.Cellule;
-import com.tresor.carte.cellule.CelluleTresor;
+import com.tresor.domain.carte.Carte;
+import com.tresor.domain.carte.Cellule;
+import com.tresor.domain.carte.CelluleTresor;
 
 public class CarteTest {
 
