@@ -15,15 +15,19 @@ public class FromAventurierInputManagerImpl implements InputManager {
 			return false;
 
 		} else {
-			char action = aventurier.getMouvement().charAt(0);
-			System.out.println(aventurier.getNom() + " fait " + action);
-			aventurier.executeInput(action);
-			String nouveauMouvement = aventurier.getMouvement().substring(1);
-			aventurier.setMouvement(nouveauMouvement);
-			
-			System.out.println(aventurier.toString());
+			excuteInput(aventurier);
 			return true;
 		}
+	}
+
+	private void excuteInput(Aventurier aventurier) {
+		char action = aventurier.getMouvement().charAt(0);
+		System.out.println(aventurier.getNom() + " fait " + action);
+		aventurier.executeInput(action);
+		String nouveauMouvement = aventurier.getMouvement().substring(1);
+		aventurier.setMouvement(nouveauMouvement);
+		
+		System.out.println(aventurier.toString());
 	}
 
 	@Override
