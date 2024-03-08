@@ -6,8 +6,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.tresor.file.writer.ResultFileWriter;
-
 public class ResultFileWriterTest {
 
 	@Test
