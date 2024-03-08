@@ -2,7 +2,7 @@ package com.tresor.application.domain.aventurier;
 
 import java.util.Objects;
 
-import com.tresor.application.domain.carte.Cellule;
+import com.tresor.application.domain.carte.cellule.Cellule;
 
 public class Aventurier {
 
@@ -22,12 +22,11 @@ public class Aventurier {
 	public Aventurier(String line) {
 		super();
 		String[] splitted = line.split(" - ");
-		String nom = splitted[1];
-		int x = Integer.valueOf(splitted[2]);
-		int y = Integer.valueOf(splitted[3]);
-		String orientation = splitted[4];
-		String mouvement = splitted[5];
-		processCells(nom,x, y,orientation,mouvement);
+		this.nom = splitted[1];
+		this.posX = Integer.parseInt(splitted[2]);
+		this.posY= Integer.parseInt(splitted[3]);
+		this.orientation = splitted[4];
+		this.mouvement = splitted[5];
 	
 	}
 
@@ -35,21 +34,16 @@ public class Aventurier {
 
 	public Aventurier(String nom, int x, int y, String orientation,String mouvement) {
 		super();
-		processCells(nom,x, y,orientation,mouvement);
-	}
-
-
-
-	private void processCells(String nom, int x, int y, String orientation,String mouvement) {
 		this.nom=nom;
-		this.posX=x;
-		this.posY=y;
+		this.posX = x;
+		this.posY= y;
 		this.orientation=orientation;
 		this.mouvement=mouvement;
-		
-		
 	}
 
+
+
+	
 
 
 
@@ -160,8 +154,7 @@ public class Aventurier {
 
 	@Override
 	public String toString() {
-		return "Aventurier [nom=" + nom + ", posX=" + posX + ", posY=" + posY + ", nombreTresors=" + nombreTresors
-				+ ", orientation=" + orientation + ", target=" + target + ", mouvement=" + mouvement + "]";
+		return "A - "+nom+" - "+posX+" - "+posY+" - "+orientation+" - "+mouvement;
 	}
 
 
