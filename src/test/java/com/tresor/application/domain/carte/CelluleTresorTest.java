@@ -1,10 +1,10 @@
-package com.tresor.domain.carte;
+package com.tresor.application.domain.carte;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.tresor.domain.carte.CelluleTresor;
+import com.tresor.application.domain.carte.cellule.CelluleTresor;
 
 public class CelluleTresorTest {
 

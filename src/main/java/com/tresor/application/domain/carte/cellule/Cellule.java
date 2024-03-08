@@ -1,4 +1,4 @@
-package com.tresor.application.domain.carte;
+package com.tresor.application.domain.carte.cellule;
 
 import java.util.Objects;
 
@@ -6,7 +6,7 @@ public class Cellule {
 
 	private int posX;
 	private int posY;
-	private String type = "";
+	private String type ="P"; //Plaine
 	private int nombreTresor=0;
 	public Cellule(int x, int y) {
 		this.posX = x;
@@ -71,8 +71,9 @@ public class Cellule {
 
 	@Override
 	public String toString() {
-		return "Cellule [posX=" + posX + ", posY=" + posY + ", type=" + type + "]";
+		return getType()+" - "+getPosX()+" - "+getPosY();
 	}
+
 
 
 

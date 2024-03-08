@@ -1,4 +1,4 @@
-package com.tresor.application.domain.carte;
+package com.tresor.application.domain.carte.cellule;
 
 public class CelluleTresor extends Cellule {
 
@@ -16,6 +16,11 @@ public class CelluleTresor extends Cellule {
 		this.setPosY(Integer.valueOf(splitted[2]));
 		this.setNombreTresor(Integer.valueOf(splitted[3]));
 		this.setType("T");
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" - "+getNombreTresor();
 	}
 
 	
