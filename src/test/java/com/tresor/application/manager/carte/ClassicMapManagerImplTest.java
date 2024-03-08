@@ -19,7 +19,7 @@ public class ClassicMapManagerImplTest {
 	@Test
 	public void createDomainTest() {
 		FileReader reader = new FileReader("carte.txt");
-		List<String> lines = reader.readFile();
+		List<String> lines = reader.readData();
 		ClassicMapManagerImpl classicMapManger= new ClassicMapManagerImpl();
 		DomainObjectManager dom = classicMapManger.createDomain(lines);
 		assertTrue(dom!=null);

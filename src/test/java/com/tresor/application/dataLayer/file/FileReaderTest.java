@@ -14,7 +14,7 @@ public class FileReaderTest {
 	@Test
 	public void readFile() {
 		FileReader reader = new FileReader("carte_vide.txt");
-		List<String> lines = reader.readFile();
+		List<String> lines = reader.readData();
 		
 		assertEquals("#commentaire", lines.get(0));
 		assertEquals("C - 3 - 4", lines.get(1));		

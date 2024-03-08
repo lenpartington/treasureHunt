@@ -11,7 +11,6 @@ import com.tresor.application.manager.domain.DomainObjectManager;
 
 public class ClassicMapManagerImpl implements MapManager {
 
-	@Override
 	public DomainObjectManager createDomain(List<String> data) {
 		DomainObjectManager dom = new ClassicDomainManagerImpl();
 		

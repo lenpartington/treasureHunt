@@ -12,7 +12,7 @@ import com.tresor.application.dataLayer.DataReader;
 public class FileReader implements DataReader {
 	private String fileName = "carte.txt";
 
-	public List<String> readFile() {
+	public List<String> readData() {
 		URI uri = null;
 		List<String> lines = new ArrayList<String>();
 		try {
@@ -32,6 +32,7 @@ public class FileReader implements DataReader {
 		this.fileName = fileName;
 	}
 
+	
 	
 	
 }
