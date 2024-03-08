@@ -5,9 +5,11 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.tresor.application.manager.MouvementManager;
-import com.tresor.domain.aventurier.Aventurier;
-import com.tresor.domain.carte.Carte;
-import com.tresor.domain.carte.Cellule;
+import com.tresor.application.domain.aventurier.Aventurier;
+import com.tresor.application.domain.carte.Carte;
+import com.tresor.application.domain.carte.cellule.Cellule;
+import com.tresor.application.domain.carte.cellule.CelluleMontagne;
+import com.tresor.application.domain.carte.cellule.CelluleTresor;
 
 public class MouvementTest {
 
@@ -21,7 +23,8 @@ public class MouvementTest {
 		for (Cellule c : carte.getCells()) {
 			System.out.println("cell x:"+c.getPosX()+", y:"+c.getPosY());
 		}
-		carte.setMontagne("M - 0 - 0");
+		CelluleMontagne montagne = new CelluleMontagne("M - 0 - 0");
+		carte.setCell(montagne);
 		assertEquals(9,carte.getCells().size());
 		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
 		assertEquals("A", lara.getMouvement());
@@ -61,7 +64,8 @@ public class MouvementTest {
 		assertEquals(9,carte.getCells().size());
 		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
 		assertEquals("A", lara.getMouvement());
-		carte.setMontagne("M - 1 - 2");
+		CelluleMontagne montagne = new CelluleMontagne("M - 1 - 2");
+		carte.setCell(montagne);
 		
 		
 		MouvementManager.processMouvementA(carte, lara);
@@ -81,7 +85,8 @@ public class MouvementTest {
 		assertEquals(9,carte.getCells().size());
 		Aventurier lara = new Aventurier("A - Lara - 1 - 1 - S - A");
 		assertEquals("A", lara.getMouvement());
-		carte.setTresor("T - 1 - 2 - 2");		
+		CelluleTresor tresor = new CelluleTresor("T - 1 - 2 - 2");
+		carte.setCell(tresor);
 		
 		MouvementManager.processMouvementA(carte, lara);
 		assertEquals(1,lara.getPosX());

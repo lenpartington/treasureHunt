@@ -3,7 +3,7 @@ package com.tresor.application.manager;
 import com.tresor.application.domain.aventurier.Aventurier;
 import com.tresor.application.domain.aventurier.Orientation;
 import com.tresor.application.domain.carte.Carte;
-import com.tresor.application.domain.carte.Cellule;
+import com.tresor.application.domain.carte.cellule.Cellule;
 
 public class MouvementManager {
 
