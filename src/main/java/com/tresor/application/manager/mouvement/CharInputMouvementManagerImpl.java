@@ -46,6 +46,8 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		case "E":
 			aventurier.setOrientation("N");
 			break;
+		default:
+			break;
 		}
 	}
 
@@ -64,6 +66,8 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 			break;
 		case "O":
 			aventurier.setOrientation("N");
+			break;
+		default:
 			break;
 		}
 
@@ -106,9 +110,8 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		}
 
 		Carte carte = domainObject.getCarte();
-		Cellule target = carte.getCell(posX, posY);
+		return carte.getCell(posX, posY);
 
-		return target;
 	}
 
 }
