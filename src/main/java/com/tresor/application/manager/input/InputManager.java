@@ -6,7 +6,7 @@ public interface InputManager {
 
 	
 
-	boolean getInput(Aventurier aventurier);
+	Input getInput(Aventurier aventurier);
 
 	boolean isFinished(Aventurier c);
 

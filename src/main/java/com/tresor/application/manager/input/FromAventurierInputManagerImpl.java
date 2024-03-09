@@ -1,7 +1,5 @@
 package com.tresor.application.manager.input;
 
-import java.util.List;
-
 import com.tresor.application.domain.aventurier.Aventurier;
 
 public class FromAventurierInputManagerImpl implements InputManager {
@@ -9,25 +7,26 @@ public class FromAventurierInputManagerImpl implements InputManager {
 
 
 	@Override
-	public boolean getInput(Aventurier aventurier) {
+	public Input getInput(Aventurier aventurier) {
 		if (aventurier.getMouvement().equals("")) {
 			System.out.println( aventurier.getNom()+" ne bouge pas");
-			return false;
+			return null;
 
 		} else {
-			excuteInput(aventurier);
-			return true;
+			return retrieveInput(aventurier);
+			
 		}
 	}
 
-	private void excuteInput(Aventurier aventurier) {
+	private Input retrieveInput(Aventurier aventurier) {
 		char action = aventurier.getMouvement().charAt(0);
 		System.out.println(aventurier.getNom() + " fait " + action);
-		aventurier.executeInput(action);
+		
 		String nouveauMouvement = aventurier.getMouvement().substring(1);
 		aventurier.setMouvement(nouveauMouvement);
 		
 		System.out.println(aventurier.toString());
+		return new CharInput(action);
 	}
 
 	@Override

@@ -3,6 +3,8 @@ package com.tresor.application.domain.aventurier;
 import java.util.Objects;
 
 import com.tresor.application.domain.carte.cellule.Cellule;
+import com.tresor.application.manager.input.InputManager;
+import com.tresor.application.manager.mouvement.MouvementManager;
 
 public class Aventurier {
 
@@ -13,6 +15,8 @@ public class Aventurier {
 	String orientation;
 	Cellule target;
 	String mouvement;
+	MouvementManager mouvementManager;
+	InputManager inputManager;
 
 	public Aventurier(String line) {
 		super();
@@ -107,6 +111,26 @@ public class Aventurier {
 	public void setMouvement(String mouvement) {
 		this.mouvement = mouvement;
 	}
+	
+	public MouvementManager getMouvementManager() {
+		return mouvementManager;
+	}
+
+	public void setMouvementManager(MouvementManager mouvementManager) {
+		this.mouvementManager = mouvementManager;
+	}
+
+	public InputManager getInputManager() {
+		return inputManager;
+	}
+
+	public void setInputManager(InputManager inputManager) {
+		this.inputManager = inputManager;
+	}
+
+	public int getNombreTresors() {
+		return nombreTresors;
+	}
 
 	@Override
 	public String toString() {
@@ -114,22 +138,7 @@ public class Aventurier {
 		return "A - " + nom + " - " + posX + " - " + posY + " - " + orientation + " - " + mouvement;
 	}
 
-	public void executeInput(char action) {
-		switch (action) {
-		case 'A':
-			System.out.println(nom+" avance");
-			break;
-		case 'G':
-			System.out.println(nom+" se tourne vers la gauche");
-			break;
-		case 'D':
-			System.out.println(nom+" se tourne vers la droite");
-			break;
-		default:
-			System.out.println(nom +" ne fait rien");
-
-		}
-
-	}
+	
+	
 
 }
