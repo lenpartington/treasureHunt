@@ -134,8 +134,9 @@ public class Aventurier {
 
 	@Override
 	public String toString() {
+String mouvement = this.mouvement==""?"":" - "+this.mouvement;
 
-		return "A - " + nom + " - " + posX + " - " + posY + " - " + orientation + " - " + mouvement;
+		return "A - " + nom + " - " + posX + " - " + posY + " - " + orientation + mouvement+ " - "+nombreTresors;
 	}
 
 	

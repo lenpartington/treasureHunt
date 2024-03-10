@@ -30,7 +30,7 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		}
 	}
 
-	private void processMouvementG(Aventurier aventurier) {
+	protected void processMouvementG(Aventurier aventurier) {
 		System.out.println(aventurier.getNom() + " se tourne vers la gauche");
 		switch (aventurier.getOrientation()) {
 		case "N":
@@ -51,7 +51,7 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		}
 	}
 
-	private void processMouvementD(Aventurier aventurier) {
+	protected void processMouvementD(Aventurier aventurier) {
 		System.out.println(aventurier.getNom() + " se tourne vers la droite");
 		switch (aventurier.getOrientation()) {
 		case "N":
@@ -84,6 +84,10 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 				System.out.println(aventurier.getNom() + " ramasse un tresor");
 				target.setNombreTresor(target.getNombreTresor() - 1);
 				aventurier.setNombreTresors(aventurier.getNombreTresor() + 1);
+				if(target.getNombreTresor()==0) {
+					target = new Cellule(target.getPosX(), target.getPosY());
+					domainObject.getCarte().setCell(target);
+				}
 			}
 			System.out.println(aventurier.getNom() + " avance");
 

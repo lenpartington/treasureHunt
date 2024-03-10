@@ -14,7 +14,7 @@ public class ResultFileWriterTest {
 		FileReader reader = new FileReader("carte_vide.txt");
 		List<String> data = reader.readData();
 		ResultFileWriter writer = new ResultFileWriter(fileNameResult);
-		writer.writeFile(data);
+		writer.writeData(data);
 		reader = new FileReader(fileNameResult);
 		List<String> lines = reader.readData();
 		assertEquals("#commentaire", lines.get(0));

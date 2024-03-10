@@ -20,7 +20,8 @@ public class ApplicationManager {
 		DomainObjectManager domainObjects = mapManager.createDomain(data);
 
 		turnManager.run(domainObjects);
-
+		
+		dataWriter.writeData(mapManager.domainToString(domainObjects));
 	}
 
 	public DataReader getDataReader() {

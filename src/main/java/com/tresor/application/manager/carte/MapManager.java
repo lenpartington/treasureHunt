@@ -8,6 +8,8 @@ public interface MapManager {
 
 	DomainObjectManager createDomain(List<String> data);
 
+	List<String> domainToString(DomainObjectManager domainObjects);
+
 	
 	
 	
