@@ -43,9 +43,6 @@ public class Carte {
 		return cells;
 	}
 
-	public void setCells(List<Cellule> cells) {
-		this.cells = cells;
-	}
 
 	public Cellule getCell(int posX, int posY) {
 		Optional<Cellule> cellule = cells.stream().filter(c -> c.getPosX() == posX).filter(c -> c.getPosY() == posY)
