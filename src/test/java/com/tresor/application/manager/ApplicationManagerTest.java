@@ -26,7 +26,7 @@ public class ApplicationManagerTest {
 		ApplicationManager am = new ApplicationManager();
 		FileReader fr = new FileReader(startFilePath);
 		am.setDataReader(fr);
-		am.setMapManager(new ClassicObjectMapperImpl());
+		am.setObjectMapper(new ClassicObjectMapperImpl());
 		am.setRoundManager(new TourParTourRoundManagerImpl());
 		am.getRoundManager().setInputManager(new FromAventurierInputManagerImpl() );
 		am.getRoundManager().setMouvementManager(new CharInputMouvementManagerImpl());

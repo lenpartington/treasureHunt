@@ -28,7 +28,7 @@ public class Main {
 		
 		ApplicationManager app = new ApplicationManager();
 		app.setDataReader(dataReader);
-		app.setMapManager(mapManager);
+		app.setObjectMapper(mapManager);
 		app.setRoundManager(turnManager);
 		
 		

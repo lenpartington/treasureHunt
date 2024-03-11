@@ -40,11 +40,11 @@ public class ApplicationManager {
 		this.dataWriter = dataWriter;
 	}
 
-	public ObjectMapper getMapManager() {
+	public ObjectMapper getObjectManager() {
 		return objectMapper;
 	}
 
-	public void setMapManager(ObjectMapper mapManager) {
+	public void setObjectMapper(ObjectMapper mapManager) {
 		this.objectMapper = mapManager;
 	}
 
