@@ -77,25 +77,58 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 
 		Cellule target = getTargetCellule(domainObject, aventurier);
 
-		if (target != null && target.getType() != "M") {
-			aventurier.setPosX(target.getPosX());
-			aventurier.setPosY(target.getPosY());
-			if (target.getType() == "T" && target.getNombreTresor() > 0) {
-				System.out.println(aventurier.getNom() + " ramasse un tresor");
-				target.setNombreTresor(target.getNombreTresor() - 1);
-				aventurier.setNombreTresors(aventurier.getNombreTresors() + 1);
-				if(target.getNombreTresor()==0) {
-					target = new Cellule(target.getPosX(), target.getPosY());
-					domainObject.getCarte().setCell(target);
-				}
-			}
-			System.out.println(aventurier.getNom() + " avance");
+		validateTarget(domainObject, aventurier, target);
 
-		} else {
+	}
+
+	private void validateTarget(DomainObjectManager domainObject, Aventurier aventurier, Cellule target) {
+		if (isMouvementBloqued(domainObject, target)) {
 			System.out.println(aventurier.getNom() + " ne peut pas avancer");
-
+			return;
 		}
 
+		aventurierAvance(aventurier, target);
+
+		checkIfCaseTresor(domainObject, aventurier, target);
+
+	}
+
+	private void checkIfCaseTresor(DomainObjectManager domainObject, Aventurier aventurier, Cellule target) {
+		if ("T".equals(target.getType()) && target.getNombreTresor() > 0) {
+			ramasseTresor(aventurier, target);
+			if (target.getNombreTresor() == 0) {
+				caseTresorDevientPlaine(domainObject, target);
+			}
+		}
+	}
+
+	private void caseTresorDevientPlaine(DomainObjectManager domainObject, Cellule target) {
+		target = new Cellule(target.getPosX(), target.getPosY());
+		domainObject.getCarte().setCell(target);
+	}
+
+	private void ramasseTresor(Aventurier aventurier, Cellule target) {
+		System.out.println(aventurier.getNom() + " ramasse un tresor");
+		target.setNombreTresor(target.getNombreTresor() - 1);
+		aventurier.setNombreTresors(aventurier.getNombreTresors() + 1);
+	}
+
+	private void aventurierAvance(Aventurier aventurier, Cellule target) {
+		aventurier.setPosX(target.getPosX());
+		aventurier.setPosY(target.getPosY());
+		System.out.println(aventurier.getNom() + " avance");
+	}
+
+	private boolean isMouvementBloqued(DomainObjectManager domainObject, Cellule target) {
+
+		if (target == null) {
+			System.out.println("Bord de carte atteint : on passe pas");
+			return true;
+		} else if ("M".equals(target.getType())) {
+			System.out.println("Montagne dit : on ne passe pas");
+			return true;
+		}
+		return hasAventurier(domainObject, target);
 	}
 
 	private Cellule getTargetCellule(DomainObjectManager domainObject, Aventurier aventurier) {
@@ -105,17 +138,20 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		int posX = aventurier.getPosX() + orientationTarget.getPosX();
 		int posY = aventurier.getPosY() + orientationTarget.getPosY();
 
-		Optional<Aventurier> dejaOccupe = domainObject.getAventuriers().stream().filter(a -> a.getPosX() == posX)
-				.filter(a -> a.getPosY() == posY).findAny();
-
-		if (dejaOccupe.isPresent()) {
-			System.out.println(dejaOccupe.get().getNom() + " dit non");
-			return null;
-		}
-
 		Carte carte = domainObject.getCarte();
 		return carte.getCell(posX, posY);
 
+	}
+
+	private boolean hasAventurier(DomainObjectManager domainObject, Cellule target) {
+		Optional<Aventurier> dejaOccupe = domainObject.getAventuriers().stream()
+				.filter(a -> a.getPosX() == target.getPosX()).filter(a -> a.getPosY() == target.getPosY()).findAny();
+
+		if (dejaOccupe.isPresent()) {
+			System.out.println(dejaOccupe.get().getNom() + " dit : on ne passe pas");
+			return true;
+		}
+		return false;
 	}
 
 }
