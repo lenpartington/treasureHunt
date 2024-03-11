@@ -10,10 +10,10 @@ import com.tresor.application.manager.turn.TurnManager;
 
 public class ApplicationManager {
 
-	public DataReader dataReader;
-	public DataWriter dataWriter;
-	public MapManager mapManager;
-	public TurnManager turnManager;
+	private DataReader dataReader;
+	private DataWriter dataWriter;
+	private MapManager mapManager;
+	private TurnManager turnManager;
 
 	public void run() {
 		List<String> data = dataReader.readData();
