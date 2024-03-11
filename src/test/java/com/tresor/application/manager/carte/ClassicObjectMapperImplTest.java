@@ -2,7 +2,6 @@ package com.tresor.application.manager.carte;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import java.nio.file.Paths;
 import java.util.List;
