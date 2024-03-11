@@ -43,7 +43,9 @@ public class ApplicationManagerTest {
 		assertEquals("M - 2 - 1",lines.get(2));
 		System.out.println(lines.get(3));
 		assertEquals("# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors restants}",lines.get(3));
-
+		assertEquals("T - 1 - 3 - 2",lines.get(4));
+		assertEquals("# {A comme Aventurier} - {Nom de l'aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trésors ramassés}",lines.get(5));
+		assertEquals("A - Lara - 0 - 3 - S - 3",lines.get(6));
 	}
 	
 }

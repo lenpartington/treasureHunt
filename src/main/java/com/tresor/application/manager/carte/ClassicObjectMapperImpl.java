@@ -76,7 +76,7 @@ public class ClassicObjectMapperImpl implements ObjectMapper {
 		List<Aventurier> aventuriers = domainObjects.getAventuriers();
 		for (Aventurier aventurier : aventuriers) {
 			results.add(
-					"# {A comme Aventurier} - {Nom de l�aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. tr�sors ramass�s}");
+					"# {A comme Aventurier} - {Nom de l'aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trésors ramassés}");
 			String adventurer = "A - " + aventurier.getNom() + " - " + aventurier.getPosX() + " - "
 					+ aventurier.getPosY() + " - " + aventurier.getOrientation() + " - "
 					+ aventurier.getNombreTresors();
