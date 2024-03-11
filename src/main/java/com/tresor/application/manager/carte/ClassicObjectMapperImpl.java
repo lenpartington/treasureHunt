@@ -54,7 +54,7 @@ public class ClassicObjectMapperImpl implements ObjectMapper {
 	@Override
 	public List<String> domainToString(DomainObjectManager domainObjects) {
 		List<String> results = new ArrayList<>();
-		
+
 		Carte carte = getCarte(domainObjects, results);
 
 		getMontagnes(results, carte);
