@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.DataWriter;
-import com.tresor.application.manager.carte.MapManager;
+import com.tresor.application.manager.carte.ObjectMapper;
 import com.tresor.application.manager.domain.DomainObjectManager;
 import com.tresor.application.manager.turn.TurnManager;
 
@@ -12,7 +12,7 @@ public class ApplicationManager {
 
 	private DataReader dataReader;
 	private DataWriter dataWriter;
-	private MapManager mapManager;
+	private ObjectMapper mapManager;
 	private TurnManager turnManager;
 
 	public void run() {
@@ -40,11 +40,11 @@ public class ApplicationManager {
 		this.dataWriter = dataWriter;
 	}
 
-	public MapManager getMapManager() {
+	public ObjectMapper getMapManager() {
 		return mapManager;
 	}
 
-	public void setMapManager(MapManager mapManager) {
+	public void setMapManager(ObjectMapper mapManager) {
 		this.mapManager = mapManager;
 	}
 

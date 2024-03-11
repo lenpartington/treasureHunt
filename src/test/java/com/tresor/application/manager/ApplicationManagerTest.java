@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import com.tresor.application.dataLayer.file.FileReader;
 import com.tresor.application.dataLayer.file.ResultFileWriter;
-import com.tresor.application.manager.carte.ClassicMapManagerImpl;
+import com.tresor.application.manager.carte.ClassicObjectMapperImpl;
 import com.tresor.application.manager.input.FromAventurierInputManagerImpl;
 import com.tresor.application.manager.mouvement.CharInputMouvementManagerImpl;
 import com.tresor.application.manager.turn.TourParTourTurnManagerImpl;
@@ -26,7 +26,7 @@ public class ApplicationManagerTest {
 		ApplicationManager am = new ApplicationManager();
 		FileReader fr = new FileReader(startFilePath);
 		am.setDataReader(fr);
-		am.setMapManager(new ClassicMapManagerImpl());
+		am.setMapManager(new ClassicObjectMapperImpl());
 		am.setTurnManager(new TourParTourTurnManagerImpl());
 		am.getTurnManager().setInputManager(new FromAventurierInputManagerImpl() );
 		am.getTurnManager().setMouvementManager(new CharInputMouvementManagerImpl());
@@ -42,13 +42,8 @@ public class ApplicationManagerTest {
 		assertEquals("M - 1 - 0",lines.get(1));
 		assertEquals("M - 2 - 1",lines.get(2));
 		System.out.println(lines.get(3));
-		assertEquals("# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors restants}",lines.get(3));
-//		# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors 
-//		restants}
-//		T - 1 - 3 - 2
-//		# {A comme Aventurier} - {Nom de l’aventurier} - {Axe horizontal} - {Axe 
-//		vertical} - {Orientation} - {Nb. trésors ramassés}
-//		A - Lara - 0 - 3 - S - 3
+		assertEquals("# {T comme TrÃ©sor} - {Axe horizontal} - {Axe vertical} - {Nb. de trÃ©sors restants}",lines.get(3));
+
 	}
 	
 }

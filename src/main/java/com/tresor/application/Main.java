@@ -3,8 +3,8 @@ package com.tresor.application;
 import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.file.FileReader;
 import com.tresor.application.manager.ApplicationManager;
-import com.tresor.application.manager.carte.ClassicMapManagerImpl;
-import com.tresor.application.manager.carte.MapManager;
+import com.tresor.application.manager.carte.ClassicObjectMapperImpl;
+import com.tresor.application.manager.carte.ObjectMapper;
 import com.tresor.application.manager.input.FromAventurierInputManagerImpl;
 import com.tresor.application.manager.input.InputManager;
 import com.tresor.application.manager.mouvement.CharInputMouvementManagerImpl;
@@ -18,7 +18,7 @@ public class Main {
 		String fileName="carte.txt";
 		
 		DataReader dataReader = new FileReader(fileName);
-		MapManager mapManager = new ClassicMapManagerImpl();
+		ObjectMapper mapManager = new ClassicObjectMapperImpl();
 		InputManager inputManager = new FromAventurierInputManagerImpl();
 		MouvementManager mouvementManager = new CharInputMouvementManagerImpl();
 		TurnManager turnManager = new TourParTourTurnManagerImpl();

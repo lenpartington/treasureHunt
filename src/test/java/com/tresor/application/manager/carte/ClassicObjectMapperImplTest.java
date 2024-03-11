@@ -13,7 +13,7 @@ import com.tresor.application.domain.carte.cellule.CelluleMontagne;
 import com.tresor.application.domain.carte.cellule.CelluleTresor;
 import com.tresor.application.manager.domain.DomainObjectManager;
 
-public class ClassicMapManagerImplTest {
+public class ClassicObjectMapperImplTest {
 
 	
 	
@@ -23,7 +23,7 @@ public class ClassicMapManagerImplTest {
 		String startFilePath = Paths.get("src/main/resources",filename).toFile().getAbsolutePath();
 		FileReader reader = new FileReader(startFilePath);
 		List<String> lines = reader.readData();
-		ClassicMapManagerImpl classicMapManger= new ClassicMapManagerImpl();
+		ClassicObjectMapperImpl classicMapManger= new ClassicObjectMapperImpl();
 		DomainObjectManager dom = classicMapManger.createDomain(lines);
 		assertTrue(dom!=null);
 		

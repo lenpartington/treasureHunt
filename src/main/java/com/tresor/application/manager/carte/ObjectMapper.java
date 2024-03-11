@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tresor.application.manager.domain.DomainObjectManager;
 
-public interface MapManager {
+public interface ObjectMapper {
 
 	DomainObjectManager createDomain(List<String> data);
 

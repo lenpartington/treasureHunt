@@ -12,7 +12,7 @@ import com.tresor.application.domain.carte.cellule.CelluleTresor;
 import com.tresor.application.manager.domain.ClassicDomainManagerImpl;
 import com.tresor.application.manager.domain.DomainObjectManager;
 
-public class ClassicMapManagerImpl implements MapManager {
+public class ClassicObjectMapperImpl implements ObjectMapper {
 
 	public DomainObjectManager createDomain(List<String> data) {
 		DomainObjectManager dom = new ClassicDomainManagerImpl();
@@ -76,7 +76,7 @@ public class ClassicMapManagerImpl implements MapManager {
 		List<Aventurier> aventuriers = domainObjects.getAventuriers();
 		for (Aventurier aventurier : aventuriers) {
 			results.add(
-					"# {A comme Aventurier} - {Nom de l’aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trésors ramassés}");
+					"# {A comme Aventurier} - {Nom de lï¿½aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trï¿½sors ramassï¿½s}");
 			String adventurer = "A - " + aventurier.getNom() + " - " + aventurier.getPosX() + " - "
 					+ aventurier.getPosY() + " - " + aventurier.getOrientation() + " - "
 					+ aventurier.getNombreTresors();
@@ -89,7 +89,7 @@ public class ClassicMapManagerImpl implements MapManager {
 				.collect(Collectors.toList());
 
 		for (Cellule tresor : tresors) {
-			results.add("# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors restants}");
+			results.add("# {T comme TrÃ©sor} - {Axe horizontal} - {Axe vertical} - {Nb. de trÃ©sors restants}");
 			results.add(tresor.toString());
 		}
 	}
