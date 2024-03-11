@@ -16,9 +16,8 @@ public class ClassicMapManagerImpl implements MapManager {
 
 	public DomainObjectManager createDomain(List<String> data) {
 		DomainObjectManager dom = new ClassicDomainManagerImpl();
-		
+
 		Carte carte = null;
-		
 
 		for (String line : data) {
 
@@ -41,15 +40,13 @@ public class ClassicMapManagerImpl implements MapManager {
 				carte.setCell(tresor);
 			}
 
-			
-			if('A'==line.charAt(0)) {
+			if ('A' == line.charAt(0)) {
 				System.out.println("Creation d'aventurier...");
 				Aventurier aventurier = new Aventurier(line);
 				System.out.println(aventurier.toString());
-				dom.getAventuriers().add(aventurier);	
+				dom.getAventuriers().add(aventurier);
 			}
-			
-			
+
 		}
 		return dom;
 	}
@@ -57,38 +54,53 @@ public class ClassicMapManagerImpl implements MapManager {
 	@Override
 	public List<String> domainToString(DomainObjectManager domainObjects) {
 		List<String> results = new ArrayList<>();
+		
+		Carte carte = getCarte(domainObjects, results);
+
+		getMontagnes(results, carte);
+
+		getTresors(results, carte);
+
+		getAventuriers(results, domainObjects);
+
+		return results;
+	}
+
+	private Carte getCarte(DomainObjectManager domainObjects, List<String> results) {
 		Carte carte = domainObjects.getCarte();
 		results.add(carte.toString());
-		
-		List<Cellule>montagnes = carte.getCells().stream()
-		.filter(c-> "M".equals(c.getType()))
-		.collect(Collectors.toList());
-		
-		for (Cellule montagne : montagnes) {
-			results.add(montagne.toString());	
-		}
-		
-		
-		List<Cellule>tresors = carte.getCells().stream()
-				.filter(c-> "T".equals(c.getType()))
-				.collect(Collectors.toList());
-				
-				for (Cellule tresor : tresors) {
-					results.add("# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors \nrestants}");
-					results.add(tresor.toString());	
-				}
-				
+		return carte;
+	}
+
+	private void getAventuriers(List<String> results, DomainObjectManager domainObjects) {
 		List<Aventurier> aventuriers = domainObjects.getAventuriers();
-		for (Aventurier aventurier: aventuriers) {
-			results.add("# {A comme Aventurier} - {Nom de l’aventurier} - {Axe horizontal} - {Axe \nvertical} - {Orientation} - {Nb. trésors ramassés}");
-			String adventurer = "A - "+aventurier.getNom()+" - "+aventurier.getPosX()+" - "+aventurier.getPosY()+" - "+aventurier.getOrientation()+ " - "+aventurier.getNombreTresors() ;
+		for (Aventurier aventurier : aventuriers) {
+			results.add(
+					"# {A comme Aventurier} - {Nom de l’aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trésors ramassés}");
+			String adventurer = "A - " + aventurier.getNom() + " - " + aventurier.getPosX() + " - "
+					+ aventurier.getPosY() + " - " + aventurier.getOrientation() + " - "
+					+ aventurier.getNombreTresors();
 			results.add(adventurer);
 		}
-		
-		
-		
-		
-		return results;
+	}
+
+	private void getTresors(List<String> results, Carte carte) {
+		List<Cellule> tresors = carte.getCells().stream().filter(c -> "T".equals(c.getType()))
+				.collect(Collectors.toList());
+
+		for (Cellule tresor : tresors) {
+			results.add("# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors restants}");
+			results.add(tresor.toString());
+		}
+	}
+
+	private void getMontagnes(List<String> results, Carte carte) {
+		List<Cellule> montagnes = carte.getCells().stream().filter(c -> "M".equals(c.getType()))
+				.collect(Collectors.toList());
+
+		for (Cellule montagne : montagnes) {
+			results.add(montagne.toString());
+		}
 	}
 
 }
