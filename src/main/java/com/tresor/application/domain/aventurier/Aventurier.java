@@ -2,7 +2,6 @@ package com.tresor.application.domain.aventurier;
 
 import java.util.Objects;
 
-import com.tresor.application.domain.carte.cellule.Cellule;
 import com.tresor.application.manager.input.InputManager;
 import com.tresor.application.manager.mouvement.MouvementManager;
 
@@ -13,7 +12,6 @@ public class Aventurier {
 	int posY;
 	int nombreTresors;
 	String orientation;
-	Cellule target;
 	String mouvement;
 	MouvementManager mouvementManager;
 	InputManager inputManager;
@@ -90,14 +88,6 @@ public class Aventurier {
 
 	public void setOrientation(String orientation) {
 		this.orientation = orientation;
-	}
-
-	public Cellule getTarget() {
-		return target;
-	}
-
-	public void setTarget(Cellule target) {
-		this.target = target;
 	}
 
 	public String getMouvement() {
