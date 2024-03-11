@@ -58,9 +58,6 @@ public class Aventurier {
 		return nom;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
 
 	public int getPosX() {
 		return posX;

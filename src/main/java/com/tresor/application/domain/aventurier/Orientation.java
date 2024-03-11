@@ -12,34 +12,33 @@ public class Orientation {
 		this.posY = y;
 	}
 
-	public static Orientation getOrientation(String target){
-	
-		int x=0;
-		int y=0;
-		
-		switch(target) {
-		
+	public static Orientation getOrientation(String target) {
+
+		int x = 0;
+		int y = 0;
+
+		switch (target) {
+
 		case "N":
-			x=0;
-			y=-1;
+			x = 0;
+			y = -1;
 			break;
 		case "S":
-			x=0;
-			y=1;
+			x = 0;
+			y = 1;
 			break;
 		case "O":
-			x=-1;
-			y=0;
+			x = -1;
+			y = 0;
 			break;
 		case "E":
-			x=1;
-			y=0;
+			x = 1;
+			y = 0;
 			break;
-					
+
 		}
-		
-		
-		return new Orientation(x,y);
+
+		return new Orientation(x, y);
 	}
 
 	@Override
@@ -63,17 +62,8 @@ public class Orientation {
 		return posX;
 	}
 
-	public void setPosX(int posX) {
-		this.posX = posX;
-	}
-
 	public int getPosY() {
 		return posY;
 	}
 
-	public void setPosY(int posY) {
-		this.posY = posY;
-	}
-	
-	
 }

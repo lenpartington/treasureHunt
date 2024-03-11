@@ -20,28 +20,17 @@ public class ApplicationManager {
 		DomainObjectManager domainObjects = objectMapper.createDomain(data);
 
 		roundManager.run(domainObjects);
-		
+
 		dataWriter.writeData(objectMapper.domainToString(domainObjects));
 	}
 
-	public DataReader getDataReader() {
-		return dataReader;
-	}
 
 	public void setDataReader(DataReader dataReader) {
 		this.dataReader = dataReader;
 	}
 
-	public DataWriter getDataWriter() {
-		return dataWriter;
-	}
-
 	public void setDataWriter(DataWriter dataWriter) {
 		this.dataWriter = dataWriter;
-	}
-
-	public ObjectMapper getObjectManager() {
-		return objectMapper;
 	}
 
 	public void setObjectMapper(ObjectMapper mapManager) {
@@ -55,7 +44,5 @@ public class ApplicationManager {
 	public void setRoundManager(RoundManager turnManager) {
 		this.roundManager = turnManager;
 	}
-
-	
 
 }

@@ -15,9 +15,7 @@ public class ClassicDomainManagerImpl implements DomainObjectManager{
 	public List<Aventurier> getAventuriers() {
 		return aventuriers;
 	}
-	public void setAventuriers(List<Aventurier> aventuriers) {
-		this.aventuriers = aventuriers;
-	}
+
 	public Carte getCarte() {
 		return carte;
 	}

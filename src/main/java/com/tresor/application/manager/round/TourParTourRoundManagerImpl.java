@@ -27,7 +27,7 @@ public class TourParTourRoundManagerImpl implements RoundManager {
 			}
 
 		}
-		System.out.println("Tours terminés");
+		System.out.println("Tours terminÃ©s");
 	}
 
 	private void playActionAventurier(DomainObjectManager domainObjects, Aventurier aventurier) {
