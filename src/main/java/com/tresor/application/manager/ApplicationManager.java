@@ -4,8 +4,8 @@ import java.util.List;
 
 import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.DataWriter;
-import com.tresor.application.manager.carte.ObjectMapper;
 import com.tresor.application.manager.domain.DomainObjectManager;
+import com.tresor.application.manager.mapping.ObjectMapper;
 import com.tresor.application.manager.turn.TurnManager;
 
 public class ApplicationManager {

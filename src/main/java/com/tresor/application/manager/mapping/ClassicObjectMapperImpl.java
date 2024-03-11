@@ -1,4 +1,4 @@
-package com.tresor.application.manager.carte;
+package com.tresor.application.manager.mapping;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -12,6 +12,7 @@ import com.tresor.application.dataLayer.file.FileReader;
 import com.tresor.application.domain.carte.cellule.CelluleMontagne;
 import com.tresor.application.domain.carte.cellule.CelluleTresor;
 import com.tresor.application.manager.domain.DomainObjectManager;
+import com.tresor.application.manager.mapping.ClassicObjectMapperImpl;
 
 public class ClassicObjectMapperImplTest {
 

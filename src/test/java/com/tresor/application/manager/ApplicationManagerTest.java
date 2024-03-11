@@ -9,8 +9,8 @@ import org.junit.Test;
 
 import com.tresor.application.dataLayer.file.FileReader;
 import com.tresor.application.dataLayer.file.ResultFileWriter;
-import com.tresor.application.manager.carte.ClassicObjectMapperImpl;
 import com.tresor.application.manager.input.FromAventurierInputManagerImpl;
+import com.tresor.application.manager.mapping.ClassicObjectMapperImpl;
 import com.tresor.application.manager.mouvement.CharInputMouvementManagerImpl;
 import com.tresor.application.manager.turn.TourParTourTurnManagerImpl;
 
