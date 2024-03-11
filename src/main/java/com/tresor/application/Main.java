@@ -9,8 +9,8 @@ import com.tresor.application.manager.mapping.ClassicObjectMapperImpl;
 import com.tresor.application.manager.mapping.ObjectMapper;
 import com.tresor.application.manager.mouvement.CharInputMouvementManagerImpl;
 import com.tresor.application.manager.mouvement.MouvementManager;
-import com.tresor.application.manager.turn.TourParTourTurnManagerImpl;
-import com.tresor.application.manager.turn.TurnManager;
+import com.tresor.application.manager.round.TourParTourRoundManagerImpl;
+import com.tresor.application.manager.round.RoundManager;
 
 public class Main {
 
@@ -21,7 +21,7 @@ public class Main {
 		ObjectMapper mapManager = new ClassicObjectMapperImpl();
 		InputManager inputManager = new FromAventurierInputManagerImpl();
 		MouvementManager mouvementManager = new CharInputMouvementManagerImpl();
-		TurnManager turnManager = new TourParTourTurnManagerImpl();
+		RoundManager turnManager = new TourParTourRoundManagerImpl();
 		turnManager.setMouvementManager(mouvementManager);
 		turnManager.setInputManager(inputManager);
 		

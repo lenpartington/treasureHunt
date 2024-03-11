@@ -6,22 +6,22 @@ import com.tresor.application.dataLayer.DataReader;
 import com.tresor.application.dataLayer.DataWriter;
 import com.tresor.application.manager.domain.DomainObjectManager;
 import com.tresor.application.manager.mapping.ObjectMapper;
-import com.tresor.application.manager.turn.TurnManager;
+import com.tresor.application.manager.round.RoundManager;
 
 public class ApplicationManager {
 
 	private DataReader dataReader;
 	private DataWriter dataWriter;
-	private ObjectMapper mapManager;
-	private TurnManager turnManager;
+	private ObjectMapper objectMapper;
+	private RoundManager roundManager;
 
 	public void run() {
 		List<String> data = dataReader.readData();
-		DomainObjectManager domainObjects = mapManager.createDomain(data);
+		DomainObjectManager domainObjects = objectMapper.createDomain(data);
 
-		turnManager.run(domainObjects);
+		roundManager.run(domainObjects);
 		
-		dataWriter.writeData(mapManager.domainToString(domainObjects));
+		dataWriter.writeData(objectMapper.domainToString(domainObjects));
 	}
 
 	public DataReader getDataReader() {
@@ -41,19 +41,19 @@ public class ApplicationManager {
 	}
 
 	public ObjectMapper getMapManager() {
-		return mapManager;
+		return objectMapper;
 	}
 
 	public void setMapManager(ObjectMapper mapManager) {
-		this.mapManager = mapManager;
+		this.objectMapper = mapManager;
 	}
 
-	public TurnManager getTurnManager() {
-		return turnManager;
+	public RoundManager getTurnManager() {
+		return roundManager;
 	}
 
-	public void setTurnManager(TurnManager turnManager) {
-		this.turnManager = turnManager;
+	public void setTurnManager(RoundManager turnManager) {
+		this.roundManager = turnManager;
 	}
 
 	

@@ -1,10 +1,10 @@
-package com.tresor.application.manager.turn;
+package com.tresor.application.manager.round;
 
 import com.tresor.application.manager.domain.DomainObjectManager;
 import com.tresor.application.manager.input.InputManager;
 import com.tresor.application.manager.mouvement.MouvementManager;
 
-public interface TurnManager {
+public interface RoundManager {
 
 	void run(DomainObjectManager domainObect);
 

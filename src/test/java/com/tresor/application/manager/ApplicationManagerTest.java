@@ -12,7 +12,7 @@ import com.tresor.application.dataLayer.file.ResultFileWriter;
 import com.tresor.application.manager.input.FromAventurierInputManagerImpl;
 import com.tresor.application.manager.mapping.ClassicObjectMapperImpl;
 import com.tresor.application.manager.mouvement.CharInputMouvementManagerImpl;
-import com.tresor.application.manager.turn.TourParTourTurnManagerImpl;
+import com.tresor.application.manager.round.TourParTourRoundManagerImpl;
 
 public class ApplicationManagerTest {
 
@@ -27,7 +27,7 @@ public class ApplicationManagerTest {
 		FileReader fr = new FileReader(startFilePath);
 		am.setDataReader(fr);
 		am.setMapManager(new ClassicObjectMapperImpl());
-		am.setTurnManager(new TourParTourTurnManagerImpl());
+		am.setTurnManager(new TourParTourRoundManagerImpl());
 		am.getTurnManager().setInputManager(new FromAventurierInputManagerImpl() );
 		am.getTurnManager().setMouvementManager(new CharInputMouvementManagerImpl());
 		am.setDataWriter(new ResultFileWriter(filename));
