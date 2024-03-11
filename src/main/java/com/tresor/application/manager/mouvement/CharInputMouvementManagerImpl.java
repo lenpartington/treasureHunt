@@ -83,7 +83,7 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 			if (target.getType() == "T" && target.getNombreTresor() > 0) {
 				System.out.println(aventurier.getNom() + " ramasse un tresor");
 				target.setNombreTresor(target.getNombreTresor() - 1);
-				aventurier.setNombreTresors(aventurier.getNombreTresor() + 1);
+				aventurier.setNombreTresors(aventurier.getNombreTresors() + 1);
 				if(target.getNombreTresor()==0) {
 					target = new Cellule(target.getPosX(), target.getPosY());
 					domainObject.getCarte().setCell(target);
