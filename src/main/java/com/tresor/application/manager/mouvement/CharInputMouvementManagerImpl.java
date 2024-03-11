@@ -24,9 +24,7 @@ public class CharInputMouvementManagerImpl implements MouvementManager {
 		case 'D':
 			processMouvementD(aventurier);
 			break;
-		default:
-			System.out.println(aventurier.getNom() + " ne fait rien");
-
+		
 		}
 	}
 
