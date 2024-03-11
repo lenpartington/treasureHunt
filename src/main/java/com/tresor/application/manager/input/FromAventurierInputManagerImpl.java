@@ -22,11 +22,15 @@ public class FromAventurierInputManagerImpl implements InputManager {
 		char action = aventurier.getMouvement().charAt(0);
 		System.out.println(aventurier.getNom() + " fait " + action);
 		
-		String nouveauMouvement = aventurier.getMouvement().substring(1);
-		aventurier.setMouvement(nouveauMouvement);
+		retireInputDeLaListe(aventurier);
 		
 		System.out.println(aventurier.toString());
 		return new CharInput(action);
+	}
+
+	private void retireInputDeLaListe(Aventurier aventurier) {
+		String nouveauMouvement = aventurier.getMouvement().substring(1);
+		aventurier.setMouvement(nouveauMouvement);
 	}
 
 	@Override

@@ -13,10 +13,7 @@ public class CharInput implements Input{
 		return input;
 	}
 
-	public void setInput(char input) {
-		this.input = input;
-	}
-	
+
 	
 	
 }
