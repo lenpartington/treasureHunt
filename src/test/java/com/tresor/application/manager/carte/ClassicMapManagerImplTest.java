@@ -3,6 +3,7 @@ package com.tresor.application.manager.carte;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.junit.Test;
@@ -18,7 +19,9 @@ public class ClassicMapManagerImplTest {
 	
 	@Test
 	public void createDomainTest() {
-		FileReader reader = new FileReader("carte.txt");
+		String filename="carte.txt";
+		String startFilePath = Paths.get("src/main/resources",filename).toFile().getAbsolutePath();
+		FileReader reader = new FileReader(startFilePath);
 		List<String> lines = reader.readData();
 		ClassicMapManagerImpl classicMapManger= new ClassicMapManagerImpl();
 		DomainObjectManager dom = classicMapManger.createDomain(lines);

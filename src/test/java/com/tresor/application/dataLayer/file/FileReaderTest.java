@@ -2,6 +2,7 @@ package com.tresor.application.dataLayer.file;
 
 import static org.junit.Assert.assertEquals;
 
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.junit.Test;
@@ -13,7 +14,9 @@ public class FileReaderTest {
 
 	@Test
 	public void readFile() {
-		FileReader reader = new FileReader("carte_vide.txt");
+		String filename="carte.txt";
+		String startFilePath = Paths.get("src/main/resources",filename).toFile().getAbsolutePath();
+		FileReader reader = new FileReader(startFilePath);
 		List<String> lines = reader.readData();
 		
 		assertEquals("#commentaire", lines.get(0));

@@ -2,9 +2,8 @@ package com.tresor.application.dataLayer.file;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.Writer;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -19,11 +18,11 @@ public class ResultFileWriter implements DataWriter {
 		BufferedWriter bfw = null;
 		FileWriter fw = null;
 		try {
-		
-			file = new File(classLoader.getResource(".").getFile() +"result_" +fileName);
-			fw = new FileWriter(file);
+
+			file = new File(classLoader.getResource(".").getFile() + "result_" + fileName);
+			fw = new FileWriter(file,StandardCharsets.UTF_8);
 			bfw = new BufferedWriter(fw);
-System.out.println(file.getAbsolutePath());
+			System.out.println("writing file :"+file.getAbsolutePath());
 			for (String line : lines) {
 
 				bfw.write(line);
@@ -39,6 +38,9 @@ System.out.println(file.getAbsolutePath());
 			try {
 				if (bfw != null) {
 					bfw.close();
+				}
+				if(fw!=null) {
+					fw.close();
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
