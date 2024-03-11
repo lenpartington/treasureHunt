@@ -48,11 +48,11 @@ public class ApplicationManager {
 		this.objectMapper = mapManager;
 	}
 
-	public RoundManager getTurnManager() {
+	public RoundManager getRoundManager() {
 		return roundManager;
 	}
 
-	public void setTurnManager(RoundManager turnManager) {
+	public void setRoundManager(RoundManager turnManager) {
 		this.roundManager = turnManager;
 	}
 

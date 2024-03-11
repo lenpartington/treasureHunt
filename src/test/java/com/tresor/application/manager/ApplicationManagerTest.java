@@ -27,9 +27,9 @@ public class ApplicationManagerTest {
 		FileReader fr = new FileReader(startFilePath);
 		am.setDataReader(fr);
 		am.setMapManager(new ClassicObjectMapperImpl());
-		am.setTurnManager(new TourParTourRoundManagerImpl());
-		am.getTurnManager().setInputManager(new FromAventurierInputManagerImpl() );
-		am.getTurnManager().setMouvementManager(new CharInputMouvementManagerImpl());
+		am.setRoundManager(new TourParTourRoundManagerImpl());
+		am.getRoundManager().setInputManager(new FromAventurierInputManagerImpl() );
+		am.getRoundManager().setMouvementManager(new CharInputMouvementManagerImpl());
 		am.setDataWriter(new ResultFileWriter(filename));
 		am.run();
 		
@@ -49,5 +49,8 @@ public class ApplicationManagerTest {
 		assertEquals(aventurier,lines.get(5));
 		assertEquals("A - Lara - 0 - 3 - S - 3",lines.get(6));
 	}
+	
+	
+	
 	
 }
