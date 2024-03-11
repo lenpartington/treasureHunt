@@ -101,7 +101,7 @@ public class MouvementTest {
 		assertEquals(1, lara.getPosX());
 		assertEquals(2, lara.getPosY());
 		assertEquals(1, carte.getCell(1, 2).getNombreTresor());
-		assertEquals(1, lara.getNombreTresor());
+		assertEquals(1, lara.getNombreTresors());
 
 	}
 
@@ -154,7 +154,7 @@ public class MouvementTest {
 		mouvementManager.processMouvementA(domain, lara);
 		assertEquals(1, lara.getPosX());
 		assertEquals(3, lara.getPosY());
-		assertEquals(1, lara.getNombreTresor());
+		assertEquals(1, lara.getNombreTresors());
 		System.out.println(lara);
 		// DADAGGA
 		mouvementManager.processMouvementD(lara);
@@ -166,7 +166,7 @@ public class MouvementTest {
 		mouvementManager.processMouvementA(domain, lara);
 		assertEquals(0, lara.getPosX());
 		assertEquals(3, lara.getPosY());
-		assertEquals(2, lara.getNombreTresor());
+		assertEquals(2, lara.getNombreTresors());
 		System.out.println(lara);
 		// DAGGA
 		mouvementManager.processMouvementD(lara);
@@ -178,7 +178,7 @@ public class MouvementTest {
 		mouvementManager.processMouvementA(domain, lara);
 		assertEquals(0, lara.getPosX());
 		assertEquals(2, lara.getPosY());
-		assertEquals(2, lara.getNombreTresor());
+		assertEquals(2, lara.getNombreTresors());
 		System.out.println(lara);
 
 		// GGA
@@ -198,7 +198,7 @@ public class MouvementTest {
 		mouvementManager.processMouvementA(domain, lara);
 		assertEquals(0, lara.getPosX());
 		assertEquals(3, lara.getPosY());
-		assertEquals(3, lara.getNombreTresor());
+		assertEquals(3, lara.getNombreTresors());
 		System.out.println(lara);
 	}
 
