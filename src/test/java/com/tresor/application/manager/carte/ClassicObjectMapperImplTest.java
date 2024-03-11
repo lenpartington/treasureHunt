@@ -1,6 +1,7 @@
 package com.tresor.application.manager.carte;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.nio.file.Paths;
@@ -26,9 +27,9 @@ public class ClassicObjectMapperImplTest {
 		List<String> lines = reader.readData();
 		ClassicObjectMapperImpl classicMapManger= new ClassicObjectMapperImpl();
 		DomainObjectManager dom = classicMapManger.createDomain(lines);
-		assertTrue(dom!=null);
+		assertNotNull(dom);
 		
-		assertTrue(dom.getCarte()!=null);
+		assertNotNull(dom.getCarte());
 		CelluleMontagne montagne = new CelluleMontagne(1,0);
 		assertEquals(montagne,dom.getCarte().getCell(1, 0));
 		
