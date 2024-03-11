@@ -81,7 +81,8 @@ public class ClassicMapManagerImpl implements MapManager {
 		List<Aventurier> aventuriers = domainObjects.getAventuriers();
 		for (Aventurier aventurier: aventuriers) {
 			results.add("# {A comme Aventurier} - {Nom de l’aventurier} - {Axe horizontal} - {Axe \nvertical} - {Orientation} - {Nb. trésors ramassés}");
-			results.add(aventurier.toString());
+			String adventurer = "A - "+aventurier.getNom()+" - "+aventurier.getPosX()+" - "+aventurier.getPosY()+" - "+aventurier.getOrientation()+ " - "+aventurier.getNombreTresors() ;
+			results.add(adventurer);
 		}
 		
 		

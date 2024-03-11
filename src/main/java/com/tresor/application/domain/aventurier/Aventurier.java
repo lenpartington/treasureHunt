@@ -80,10 +80,6 @@ public class Aventurier {
 		this.posY = posY;
 	}
 
-	public int getNombreTresor() {
-		return nombreTresors;
-	}
-
 	public void setNombreTresors(int nombreTresors) {
 		this.nombreTresors = nombreTresors;
 	}
@@ -111,22 +107,6 @@ public class Aventurier {
 	public void setMouvement(String mouvement) {
 		this.mouvement = mouvement;
 	}
-	
-	public MouvementManager getMouvementManager() {
-		return mouvementManager;
-	}
-
-	public void setMouvementManager(MouvementManager mouvementManager) {
-		this.mouvementManager = mouvementManager;
-	}
-
-	public InputManager getInputManager() {
-		return inputManager;
-	}
-
-	public void setInputManager(InputManager inputManager) {
-		this.inputManager = inputManager;
-	}
 
 	public int getNombreTresors() {
 		return nombreTresors;
@@ -134,12 +114,8 @@ public class Aventurier {
 
 	@Override
 	public String toString() {
-String mouvement = this.mouvement==""?"":" - "+this.mouvement;
-
-		return "A - " + nom + " - " + posX + " - " + posY + " - " + orientation + mouvement+ " - "+nombreTresors;
+		return "A - " + nom + " - " + posX + " - " + posY + " - " + orientation + " - " + mouvement + " - "
+				+ nombreTresors;
 	}
-
-	
-	
 
 }
