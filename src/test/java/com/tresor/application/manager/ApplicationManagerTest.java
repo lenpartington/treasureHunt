@@ -50,6 +50,26 @@ public class ApplicationManagerTest {
 		assertEquals("A - Lara - 0 - 3 - S - 3",lines.get(6));
 	}
 	
+	@Test 
+	public void test_main() {
+		com.tresor.application.Main.main(null);
+		String endFilePath = Paths.get("target","test-classes/result_carte.txt").toFile().getAbsolutePath();
+		System.out.println("URI = "+Paths.get("target","test-classes/result_carte.txt").toFile().toURI());
+		FileReader fr = new FileReader(endFilePath);
+		List<String> lines = fr.readData();
+		System.out.println(lines.size());
+		assertEquals("C - 3 - 4", lines.get(0));
+		assertEquals("M - 1 - 0",lines.get(1));
+		assertEquals("M - 2 - 1",lines.get(2));
+		System.out.println(lines.get(3));
+		String tresor = "# {T comme Trésor} - {Axe horizontal} - {Axe vertical} - {Nb. de trésors restants}";
+		assertEquals(tresor,lines.get(3));
+		assertEquals("T - 1 - 3 - 2",lines.get(4));
+		String aventurier = "# {A comme Aventurier} - {Nom de l'aventurier} - {Axe horizontal} - {Axe vertical} - {Orientation} - {Nb. trésors ramassés}";
+		assertEquals(aventurier,lines.get(5));
+		assertEquals("A - Lara - 0 - 3 - S - 3",lines.get(6));
+	}
+	
 	
 	
 	
